@@ -1,0 +1,68 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/juliangerhards/Desktop/Knoggl/SwiftPlus/Sources/SwiftPlus/Classes/SPThreadHelper.swift",
+      "line": 23,
+      "symbol": "SPThreadHelper.async",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juliangerhards/Desktop/Knoggl/SwiftPlus/Sources/SwiftPlus/Classes/SPThreadHelper.swift",
+      "line": 24,
+      "symbol": "SPThreadHelper.async.userInteractive",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juliangerhards/Desktop/Knoggl/SwiftPlus/Sources/SwiftPlus/Classes/SPThreadHelper.swift",
+      "line": 25,
+      "symbol": "SPThreadHelper.async.userInitiated",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juliangerhards/Desktop/Knoggl/SwiftPlus/Sources/SwiftPlus/Classes/SPThreadHelper.swift",
+      "line": 26,
+      "symbol": "SPThreadHelper.async.utility",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juliangerhards/Desktop/Knoggl/SwiftPlus/Sources/SwiftPlus/Classes/SPThreadHelper.swift",
+      "line": 27,
+      "symbol": "SPThreadHelper.async.background",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juliangerhards/Desktop/Knoggl/SwiftPlus/Sources/SwiftPlus/Classes/SPThreadHelper.swift",
+      "line": 28,
+      "symbol": "SPThreadHelper.async.main",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juliangerhards/Desktop/Knoggl/SwiftPlus/Sources/SwiftPlus/SwiftPlus.swift",
+      "line": 18,
+      "symbol": "SwiftPlus",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juliangerhards/Desktop/Knoggl/SwiftPlus/Sources/SwiftPlus/SwiftPlus.swift",
+      "line": 19,
+      "symbol": "SwiftPlus.text",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/juliangerhards/Desktop/Knoggl/SwiftPlus/Sources/SwiftPlus/SwiftPlus.swift",
+      "line": 21,
+      "symbol": "SwiftPlus.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/juliangerhards/Desktop/Knoggl/SwiftPlus"
+}
