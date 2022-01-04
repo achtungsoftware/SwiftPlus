@@ -1,3 +1,5 @@
+[Documentation](https://knoggl.github.io/SwiftPlus/)
+
 # SwiftPlus
 
 SwiftPlus is a extension for Swift.
