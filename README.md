@@ -12,6 +12,8 @@ https://github.com/knoggl/SwiftPlus.git
 ```
 
 # Examples
+
+### SPHttp
 The ``SPHttp Class`` let's you easily connect to a server via Http. It also allows you to directly convert a json result into an object or object array.
 
 ``SPHttp.post``
