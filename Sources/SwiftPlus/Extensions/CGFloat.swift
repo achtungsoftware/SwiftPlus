@@ -17,6 +17,9 @@
 
 import Foundation
 
+#if canImport(CoreGraphics)
+import CoreGraphics
+
 public extension CGFloat {
     
     /// Clamps a CGFloat to a max value
@@ -41,3 +44,4 @@ public extension CGFloat {
         }
     }
 }
+#endif

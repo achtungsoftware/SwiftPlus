@@ -36,7 +36,7 @@ public extension String {
     }
     
     /// Get MD5 Hash from String
-    @available(iOS 9.0, macOS 10.15, *)
+    @available(iOS 13.0, macOS 10.15, *)
     var md5: String {
         let computed = Insecure.MD5.hash(data: self.data(using: .utf8)!)
         return computed.map { String(format: "%02hhx", $0) }.joined()
