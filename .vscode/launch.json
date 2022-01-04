@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Test SwiftPlus",
+            "program": "/Applications/Xcode.app/Contents/Developer/usr/bin/xctest",
+            "args": [
+                ".build/debug/SwiftPlusPackageTests.xctest"
+            ],
+            "cwd": "${workspaceFolder:SwiftPlus}",
+            "preLaunchTask": "swift: Build All"
+        }
+    ]
+}
