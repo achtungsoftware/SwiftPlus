@@ -44,6 +44,7 @@ public extension String {
     }
 #endif
     
+#if os(iOS)
     /// Searches for Links in String
     /// - Returns: Dictionary of LinkString: NSRange
     func getLinks() -> [String: NSRange]{
@@ -60,6 +61,7 @@ public extension String {
             return [:]
         }
     }
+#endif
     
     /// Searches for Hashtags in String
     /// - Returns: Dictionary of HashtagString: NSRange
