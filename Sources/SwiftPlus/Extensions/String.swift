@@ -35,12 +35,14 @@ public extension String {
         self.addingPercentEncoding(withAllowedCharacters: .alphanumerics) ?? ""
     }
     
+#if canImport(CryptoKit)
     /// Get MD5 Hash from String
     @available(iOS 13.0, macOS 10.15, *)
     var md5: String {
         let computed = Insecure.MD5.hash(data: self.data(using: .utf8)!)
         return computed.map { String(format: "%02hhx", $0) }.joined()
     }
+#endif
     
     /// Searches for Links in String
     /// - Returns: Dictionary of LinkString: NSRange
