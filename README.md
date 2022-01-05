@@ -7,8 +7,8 @@ Build the documentation with [jazzy](https://github.com/realm/jazzy)
 
 # Swift Package Manager
 Get this package with the Swift Package Manager
-```console
-https://github.com/knoggl/SwiftPlus.git
+```swift
+.package(url: "https://github.com/knoggl/SwiftPlus.git", .upToNextMinor(from: "1.0.1")),
 ```
 
 # Examples
