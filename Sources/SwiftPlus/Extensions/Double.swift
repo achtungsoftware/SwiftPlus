@@ -26,4 +26,26 @@ public extension Double {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
+    
+    /// Clamps a `Double` to a max value
+    /// - Parameter max: The maximal allowed value for this `Double`
+    /// - Returns: The `Double` with the specified maximum value
+    func maxValue(_ max: Double) -> Double {
+        if(self > max) {
+            return max
+        }else {
+            return self
+        }
+    }
+    
+    /// Clamps a `Double` to a min value
+    /// - Parameter min: The minimal allowed value for this `Double`
+    /// - Returns: The `Double` with the specified minimum value
+    func minValue(_ min: Double) -> Double {
+        if(self < min) {
+            return min
+        }else {
+            return self
+        }
+    }
 }
