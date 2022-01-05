@@ -22,6 +22,14 @@ import CoreGraphics
 
 public extension CGFloat {
     
+    /// Rounds a `CGFloat`
+    /// - Parameter CGFloat: To how many places after the comma should be rounded?
+    /// - Returns: The rounded `CGFloat`
+    func round(to places: Int) -> CGFloat {
+        let divisor = pow(10.0, CGFloat(places))
+        return (self * divisor).rounded() / divisor
+    }
+    
     /// Clamps a `CGFloat` to a max value
     /// - Parameter max: The maximal allowed value for this `CGFloat`
     /// - Returns: The `CGFloat` with the specified maximum value

@@ -19,10 +19,27 @@ import XCTest
 @testable import SwiftPlus
 
 final class SwiftPlusTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(SwiftPlus().text, "Hello, World!")
+    func test_double_extensions() throws {
+        let double: Double = 1.494
+        
+        XCTAssertEqual(double.round(to: 2), 1.49)
+        XCTAssertEqual(double.maxValue(1.4), 1.4)
+        XCTAssertEqual(double.minValue(4.0), 4.0)
+    }
+    
+    func test_cgfloat_extensions() throws {
+        let double: CGFloat = 1.494
+        
+        XCTAssertEqual(double.round(to: 2), 1.49)
+        XCTAssertEqual(double.maxValue(1.4), 1.4)
+        XCTAssertEqual(double.minValue(4.0), 4.0)
+    }
+    
+    func test_string_extensions() throws {
+        let string: String = " Hallo, mein #Name ist @String. Ich bin ein Swift-Typ. "
+        
+        XCTAssertEqual(string.trim(), "Hallo, mein #Name ist @String. Ich bin ein Swift-Typ.")
+        XCTAssertEqual(string.getHashtags(), ["#Name": NSRange(location: 13, length: 5)])
+        XCTAssertEqual(string.getMentions(), ["@String": NSRange(location: 23, length: 7)])
     }
 }
