@@ -11,6 +11,12 @@ Get this package with the Swift Package Manager
 .package(url: "https://github.com/knoggl/SwiftPlus.git", .upToNextMinor(from: "1.0.1")),
 ```
 
+# Tested Platforms
+| Windows | iOS | macOS | Linux |
+| :-: | :-: | :-: | :-: |
+| ✅ | ✅ | ✅ | ✅ |
+
+
 # Examples
 
 ### SPHttp
