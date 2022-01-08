@@ -48,4 +48,17 @@ public extension Double {
             return self
         }
     }
+    
+    
+    /// Checks if the `Double` number is a whole number
+    /// - Returns: `true` if whole number `false` if not
+    func isWhole() -> Bool {
+        self.truncatingRemainder(dividingBy: 1) == 0
+    }
+    
+    /// Returns a `String` representation of a `Double`.
+    /// If the `Double` is a whole number it will return without ".", else with
+    var stringRepresentation: String {
+        return self.isWhole() ? String(Int(self)) : String(self)
+    }
 }
