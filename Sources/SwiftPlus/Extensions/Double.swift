@@ -31,7 +31,7 @@ public extension Double {
     /// - Parameter max: The maximal allowed value for this `Double`
     /// - Returns: The `Double` with the specified maximum value
     func maxValue(_ max: Double) -> Double {
-        if(self > max) {
+        if self > max {
             return max
         }else {
             return self
@@ -42,7 +42,7 @@ public extension Double {
     /// - Parameter min: The minimal allowed value for this `Double`
     /// - Returns: The `Double` with the specified minimum value
     func minValue(_ min: Double) -> Double {
-        if(self < min) {
+        if self < min {
             return min
         }else {
             return self

@@ -34,7 +34,7 @@ public extension CGFloat {
     /// - Parameter max: The maximal allowed value for this `CGFloat`
     /// - Returns: The `CGFloat` with the specified maximum value
     func maxValue(_ max: CGFloat) -> CGFloat {
-        if(self > max) {
+        if self > max {
             return max
         }else {
             return self
@@ -45,7 +45,7 @@ public extension CGFloat {
     /// - Parameter min: The minimal allowed value for this `CGFloat`
     /// - Returns: The `CGFloat` with the specified minimum value
     func minValue(_ min: CGFloat) -> CGFloat {
-        if(self < min) {
+        if self < min {
             return min
         }else {
             return self

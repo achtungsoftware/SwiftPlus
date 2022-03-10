@@ -16,7 +16,7 @@
     <a title="  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html"> Docs</a> (65% documented)</p>
+        <p><a href="index.html"> Docs</a> (70% documented)</p>
         <div class="header-right">
           <form role="search" action="search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -78,15 +78,76 @@
             
             <h1 id='swiftplus' class='heading'>SwiftPlus</h1>
 
-<p>SwiftPlus is a extension for Swift.</p>
+<p>SwiftPlus is made to have a package which contains everyday use extensions, functions and helper classes.</p>
+<h1 id='documentation' class='heading'>Documentation</h1>
+
+<p>You can find the documentation <a href="https://knoggl.github.io/SwiftPlus/">here</a>.
+Build the documentation with <a href="https://github.com/realm/jazzy">jazzy</a></p>
 <h1 id='swift-package-manager' class='heading'>Swift Package Manager</h1>
-<pre class="highlight plaintext"><code>https://github.com/knoggl/SwiftPlus.git
+
+<p>Get this package with the Swift Package Manager</p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/knoggl/SwiftPlus.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMinor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"1.0.1"</span><span class="p">)),</span>
+</code></pre>
+<h1 id='tested-platforms' class='heading'>Tested Platforms</h1>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Windows</th>
+<th style="text-align: center">iOS</th>
+<th style="text-align: center">macOS</th>
+<th style="text-align: center">Linux</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">✅</td>
+<td style="text-align: center">✅</td>
+<td style="text-align: center">✅</td>
+<td style="text-align: center">✅</td>
+</tr>
+</tbody></table>
+<h1 id='examples' class='heading'>Examples</h1>
+<h3 id='sphttp' class='heading'>SPHttp</h3>
+
+<p>The <code>SPHttp Class</code> let&rsquo;s you easily connect to a server via Http. It also allows you to directly convert a json result into an object or object array.</p>
+
+<p><code>SPHttp.post</code></p>
+<pre class="highlight swift"><code><span class="kt">SPHttp</span><span class="o">.</span><span class="nf">post</span><span class="p">(</span><span class="s">"YOUR_URL_STRING"</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s">"foo"</span><span class="p">:</span> <span class="n">bar</span>
+<span class="p">])</span> <span class="p">{</span> <span class="n">result</span><span class="p">,</span> <span class="n">success</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><code>SPHttp.postObject</code></p>
+<pre class="highlight swift"><code><span class="kt">SPHttp</span><span class="o">.</span><span class="nf">postObject</span><span class="p">(</span><span class="s">"YOUR_URL_STRING"</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s">"foo"</span><span class="p">:</span> <span class="n">bar</span>
+<span class="p">],</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">MyModel</span><span class="o">.</span><span class="k">self</span><span class="p">){</span> <span class="n">object</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">success</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">object</span> <span class="o">=</span> <span class="n">object</span> <span class="p">{</span>
+            <span class="c1">// Do something with your object</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p><code>SPHttp.postObjectArray</code></p>
+<pre class="highlight swift"><code><span class="kt">SPHttp</span><span class="o">.</span><span class="nf">postObjectArray</span><span class="p">(</span><span class="s">"YOUR_URL_STRING"</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s">"foo"</span><span class="p">:</span> <span class="n">bar</span>
+<span class="p">],</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">MyModel</span><span class="o">.</span><span class="k">self</span><span class="p">){</span> <span class="n">array</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">success</span> <span class="k">in</span>
+    <span class="k">if</span> <span class="n">success</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="k">let</span> <span class="nv">array</span> <span class="o">=</span> <span class="n">array</span> <span class="p">{</span>
+            <span class="c1">// Do something with your array</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-01-04)</p>
+          <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2022-03-11)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
