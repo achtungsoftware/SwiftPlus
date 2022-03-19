@@ -33,9 +33,9 @@ public extension Double {
     func maxValue(_ max: Double) -> Double {
         if self > max {
             return max
-        }else {
-            return self
         }
+        
+        return self
     }
     
     /// Clamps a `Double` to a min value
@@ -44,9 +44,9 @@ public extension Double {
     func minValue(_ min: Double) -> Double {
         if self < min {
             return min
-        }else {
-            return self
         }
+        
+        return self
     }
     
     

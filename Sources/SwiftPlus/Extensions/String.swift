@@ -73,6 +73,7 @@ public extension String {
                 hashtags[NSString(string: self).substring(with: NSRange(location:match.range.location, length: match.range.length))] = NSRange(location:match.range.location, length: match.range.length)
             }
         }
+        
         return hashtags
     }
     
@@ -86,6 +87,7 @@ public extension String {
                 mentions[NSString(string: self).substring(with: NSRange(location:match.range.location, length: match.range.length))] = NSRange(location:match.range.location, length: match.range.length)
             }
         }
+        
         return mentions
     }
 }
