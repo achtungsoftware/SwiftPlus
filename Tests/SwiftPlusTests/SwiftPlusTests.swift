@@ -19,6 +19,7 @@ import XCTest
 @testable import SwiftPlus
 
 final class SwiftPlusTests: XCTestCase {
+    
     func test_double_extensions() throws {
         let double: Double = 1.494
         
@@ -28,11 +29,11 @@ final class SwiftPlusTests: XCTestCase {
     }
     
     func test_cgfloat_extensions() throws {
-        let double: CGFloat = 1.494
+        let cgFloat: CGFloat = 1.494
         
-        XCTAssertEqual(double.round(to: 2), 1.49)
-        XCTAssertEqual(double.maxValue(1.4), 1.4)
-        XCTAssertEqual(double.minValue(4.0), 4.0)
+        XCTAssertEqual(cgFloat.round(to: 2), 1.49)
+        XCTAssertEqual(cgFloat.maxValue(1.4), 1.4)
+        XCTAssertEqual(cgFloat.minValue(4.0), 4.0)
     }
     
     func test_string_extensions() throws {
@@ -41,5 +42,12 @@ final class SwiftPlusTests: XCTestCase {
         XCTAssertEqual(string.trim(), "Hallo, mein #Name ist @String. Ich bin ein Swift-Typ.")
         XCTAssertEqual(string.getHashtags(), ["#Name": NSRange(location: 13, length: 5)])
         XCTAssertEqual(string.getMentions(), ["@String": NSRange(location: 23, length: 7)])
+        
+        if #available(iOS 10.2, *) {
+            XCTAssertEqual("☺️ Test".containsEmoji, true)
+            XCTAssertEqual("☺️ Test".containsOnlyEmoji, false)
+            XCTAssertEqual("☺️☺️".containsOnlyEmoji, true)
+            XCTAssertEqual("☺️".isSingleEmoji, true)
+        }
     }
 }

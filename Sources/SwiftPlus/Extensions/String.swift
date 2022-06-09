@@ -90,4 +90,25 @@ public extension String {
         
         return mentions
     }
+    
+    /// Returns true if `String` is only a single emoji
+    @available(iOS 10.2, *)
+    var isSingleEmoji: Bool { count == 1 && containsEmoji }
+    
+    /// Returns true if `String` contains at least one emoji
+    @available(iOS 10.2, *)
+    var containsEmoji: Bool { contains { $0.isEmoji } }
+    
+    /// Returns true if `String` contains only emoji´s
+    @available(iOS 10.2, *)
+    var containsOnlyEmoji: Bool { !isEmpty && !contains { !$0.isEmoji } }
+    
+    @available(iOS 10.2, *)
+    var emojiString: String { emojis.map { String($0) }.reduce("", +) }
+    
+    @available(iOS 10.2, *)
+    var emojis: [Character] { filter { $0.isEmoji } }
+    
+    @available(iOS 10.2, *)
+    var emojiScalars: [UnicodeScalar] { filter { $0.isEmoji }.flatMap { $0.unicodeScalars } }
 }
