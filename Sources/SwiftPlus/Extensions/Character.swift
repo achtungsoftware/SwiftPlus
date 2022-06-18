@@ -9,6 +9,7 @@ import Foundation
 
 public extension Character {
     /// A simple emoji is one scalar and presented to the user as an Emoji
+    @available(macOS 10.12.2, *)
     @available(iOS 10.2, *)
     var isSimpleEmoji: Bool {
         guard let firstScalar = unicodeScalars.first else { return false }
@@ -16,9 +17,11 @@ public extension Character {
     }
 
     /// Checks if the scalars will be merged into an emoji
+    @available(macOS 10.12.2, *)
     @available(iOS 10.2, *)
     var isCombinedIntoEmoji: Bool { unicodeScalars.count > 1 && unicodeScalars.first?.properties.isEmoji ?? false }
 
+    @available(macOS 10.12.2, *)
     @available(iOS 10.2, *)
     var isEmoji: Bool { isSimpleEmoji || isCombinedIntoEmoji }
 }
