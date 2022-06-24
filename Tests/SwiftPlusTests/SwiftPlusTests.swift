@@ -50,4 +50,16 @@ final class SwiftPlusTests: XCTestCase {
             XCTAssertEqual("☺️".isSingleEmoji, true)
         }
     }
+    
+    func test_collection_extensions() throws {
+        let array_subscript = [
+            "Hallo",
+            "Welt"
+        ]
+        
+        XCTAssertEqual(array_subscript[optional: 0], "Hallo")
+        XCTAssertEqual(array_subscript[optional: 1], "Welt")
+        XCTAssertEqual(array_subscript[optional: 35], nil)
+        XCTAssertEqual(array_subscript[optional: 24342], nil)
+    }
 }
