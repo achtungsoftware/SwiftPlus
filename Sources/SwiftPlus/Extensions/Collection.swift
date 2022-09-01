@@ -18,6 +18,7 @@
 import Foundation
 
 public extension Collection {
+    // Returns an `Optional` `Element` and prevents index out of range error.
     subscript(optional index: Index) -> Iterator.Element? {
         return (startIndex <= index && index < endIndex) ? self[index] : nil
     }
