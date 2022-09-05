@@ -20,6 +20,11 @@ import XCTest
 
 final class SwiftPlusTests: XCTestCase {
     
+    struct Model: Identifiable, Equatable {
+        let id: String
+        let name: String
+    }
+    
     func test_double_extensions() throws {
         let double: Double = 1.494
         
@@ -43,23 +48,42 @@ final class SwiftPlusTests: XCTestCase {
         XCTAssertEqual(string.getHashtags(), ["#Name": NSRange(location: 13, length: 5)])
         XCTAssertEqual(string.getMentions(), ["@String": NSRange(location: 23, length: 7)])
         
-        if #available(iOS 10.2, *) {
-            XCTAssertEqual("☺️ Test".containsEmoji, true)
-            XCTAssertEqual("☺️ Test".containsOnlyEmoji, false)
-            XCTAssertEqual("☺️☺️".containsOnlyEmoji, true)
-            XCTAssertEqual("☺️".isSingleEmoji, true)
-        }
+        XCTAssertEqual("☺️ Test".containsEmoji, true)
+        XCTAssertEqual("☺️ Test".containsOnlyEmoji, false)
+        XCTAssertEqual("☺️☺️".containsOnlyEmoji, true)
+        XCTAssertEqual("☺️".isSingleEmoji, true)
     }
     
     func test_collection_extensions() throws {
-        let array_subscript = [
-            "Hallo",
-            "Welt"
+        let array: Array<Model> = [
+            .init(id: "32", name: "Julian"),
+            .init(id: "34", name: "Marie"),
+            .init(id: "52", name: "Joshua"),
+            .init(id: "1", name: "Sylvia"),
+            .init(id: "3", name: "Katharina"),
+            .init(id: "3884", name: "Arwin"),
         ]
         
-        XCTAssertEqual(array_subscript[optional: 0], "Hallo")
-        XCTAssertEqual(array_subscript[optional: 1], "Welt")
-        XCTAssertEqual(array_subscript[optional: 35], nil)
-        XCTAssertEqual(array_subscript[optional: 24342], nil)
+        XCTAssertEqual(array[optional: 0], array[0])
+        XCTAssertEqual(array[optional: 1], array[1])
+        XCTAssertEqual(array[optional: 35], nil)
+        XCTAssertEqual(array[optional: 24342], nil)
+        
+        XCTAssertTrue(array.contains(id: "32"))
+        XCTAssertTrue(array.contains(id: "34"))
+        XCTAssertTrue(array.contains(id: "52"))
+        XCTAssertTrue(array.contains(id: "1"))
+        XCTAssertTrue(array.contains(id: "3"))
+        XCTAssertTrue(array.contains(id: "3884"))
+        
+        XCTAssertFalse(array.contains(id: "432"))
+        XCTAssertFalse(array.contains(id: "534253"))
+        
+        XCTAssertEqual(array.item(byId: "32"), array[0])
+        XCTAssertEqual(array.item(byId: "34"), array[1])
+        XCTAssertEqual(array.item(byId: "52"), array[2])
+        XCTAssertEqual(array.item(byId: "1"), array[3])
+        XCTAssertEqual(array.item(byId: "3"), array[4])
+        XCTAssertEqual(array.item(byId: "3884"), array[5])
     }
 }
